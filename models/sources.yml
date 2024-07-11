@@ -12,3 +12,6 @@ sources:
       
       - name: reviews
         identifier: raw_reviews
+        loaded_at_field: date
+        freshness:
+          warn_after: {count: 1, period: hour}
