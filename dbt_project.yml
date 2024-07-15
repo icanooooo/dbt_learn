@@ -33,5 +33,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   dbtlearn2:
     +materialized: view
+    +post-hook:
+      - "GRANT SELECT ON {{ this }} TO ROLE REPORTER"
     src:
       +materialized: ephemeral

@@ -1,0 +1,16 @@
+version: 2
+
+exposures:
+  - name: Executive_Dashboard
+    label: Executive Dashboard
+    type: dashboard
+    maturity: low
+    url: https://c26598f1.us2a.app.preset.io/superset/dashboard/8/?edit=true&native_filters_key=w7GsMLz9_QyrHgwE21vNFAj_JbIeTPwW5tNqULbHUg77jQZ-_ZEf-4rsQMDl1en7
+    description: Executive Dashboard Exploring between Full Moon and Reviews
+
+    depends_on:
+      - ref('mart_fullmoon')
+
+    owner:
+      name: Peter Siahaan
+      email: muhihsan0@outlook.com
