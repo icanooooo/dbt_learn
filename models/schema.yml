@@ -37,5 +37,28 @@ models:
       - name: listing_url
         data_tests:
           - unique
-          
+
+  - name: dim_hosts_cleansed
+    description: '{{ doc("hosts_list_cleansed") }}'
+    columns:
+      - name: host_id
+        description: Unique ID for each hosts.
+        tests:
+          - not_null
+          - unique
       
+      - name: host_name
+        description: Name for identifiying hosts.
+        tests:
+          - not_null
+      
+      - name: is_superhost
+        description: Column to identify top rated hosts.
+          - accepted_values:
+              values: ['t', 'f']
+      
+      - name: created_at
+        description: To identify creation time.
+
+      - name: updated_at
+        description: To identify updated time.
