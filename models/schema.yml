@@ -2,14 +2,17 @@ version: 2
 
 models:
   - name: dim_listing_cleansed
+    description: Table with cleansed Airbnb listings.
     columns:
 
       - name: listing_id
+        description: Unique ID to Identify listings
         data_tests:
           - unique
           - not_null
 
       - name: host_id
+        description: ID for each host of any listings.
         data_tests:
           - not_null
           - relationships:
@@ -17,6 +20,7 @@ models:
               field: host_id
 
       - name: room_type
+        description: type of room for rental.
         data_tests:
           - accepted_values:
               values: ['Entire home/apt',
