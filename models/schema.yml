@@ -27,8 +27,7 @@ models:
                       'Private room',
                       'Shared room',
                       'Hotel room']
-      
-
+  
       - name: minimum_nights
         description: '{{ doc("listing_min_nights") }}'
         data_tests:
@@ -66,6 +65,20 @@ models:
         description: To identify updated time.
 
   - name: dim_listing_w_hosts
+    columns:
+      - name: price
+        data_tests:
+        - dbt_expectations.expect_column_values_to_be_of_type:
+            column_type: number
+        - dbt_expectations.expect_column_quantile_values_to_be_between:
+            quantile: .99
+            min_value: 50
+            max_value: 500
+        - dbt_expectations.expect_column_max_to_be_between:
+            max_value: 5000
+            config:
+              severity: warn
+
     data_tests:
       - dbt_expectations.expect_table_row_count_to_equal_other_table:
           compare_model: ref("dim_listing_cleansed")
