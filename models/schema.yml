@@ -37,7 +37,7 @@ models:
       - name: listing_url
         data_tests:
           - unique
-
+  
   - name: dim_hosts_cleansed
     description: '{{ doc("hosts_list_cleansed") }}'
     columns:
@@ -64,3 +64,8 @@ models:
 
       - name: updated_at
         description: To identify updated time.
+
+  - name: dim_listing_w_hosts
+    data_tests:
+      - dbt_expectations.expect_table_row_count_to_equal_other_table:
+          compare_model: ref("dim_listing_cleansed")
