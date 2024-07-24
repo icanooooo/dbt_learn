@@ -5,7 +5,7 @@
 
 {{ log("Irene loves " ~ name_jinja, info=True )}}
 
-{{ log("Hello dbt user " ~ var("user_name"), info=True)}}
+{{ log("Hello dbt user " ~ var("user_name", "Kim Yerim"), info=True)}}
 
 
 {% endmacro %}

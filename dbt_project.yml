@@ -37,6 +37,3 @@ models:
       - "GRANT SELECT ON {{ this }} TO ROLE REPORTER"
     src:
       +materialized: ephemeral
-
-vars:
-  user_name: Kim Yerim
