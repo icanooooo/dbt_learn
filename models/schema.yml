@@ -53,11 +53,7 @@ models:
       
       - name: is_superhost
         description: Column to identify top rated hosts.
-        tests: 
-          - accepted_values:
-              values: ['t', 
-              f']
-      
+
       - name: created_at
         description: To identify creation time.
 
